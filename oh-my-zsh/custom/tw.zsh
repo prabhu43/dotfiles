@@ -1,1 +1,1 @@
-alias godir='cd $(find ~/TW-Client/Projects -type d -maxdepth 2 | fzf)'
+alias godir='cd $(find ~/tw-projects -type d -maxdepth 2 | fzf)'

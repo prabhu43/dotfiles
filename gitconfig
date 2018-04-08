@@ -4,13 +4,13 @@
 # committing with wrong email addresses to a certain extent.
 
 [user]
-  name = Arunvel Sriram
+  name = Prabhu Jayakumar
 
 # Set the git config email to client given email when the git repo is
-# inside ~/TW-Client/ directory
+# inside ~/tw-projects/ directory
 
-[includeIf "gitdir:~/TW-Client/"]
-  path = .gitconfig-tw-client
+[includeIf "gitdir:~/tw-projects/"]
+  path = .gitconfig-tw
 
 [core]
   editor = nvim
@@ -19,3 +19,5 @@
 	  ui = auto
 [apply]
   whitespace = fix
+[credential]
+	helper = osxkeychain
