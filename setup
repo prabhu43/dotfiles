@@ -106,6 +106,17 @@ install_fubectl() {
   fi
 }
 
+install_vscode_plugins() {
+  plugins=($(awk '{print $1}' ./vscode_plugins))
+
+  plugins_count=${#plugins[@]}
+
+  for ((i=0; i<$plugins_count; i++)); do
+    printf "${plugins[i]}\n"
+    code --install-extension "${plugins[i]}"
+  done
+}
+
 brew_packages
 
 create_directories
@@ -119,6 +130,7 @@ install_cargo
 install_cargo_packages
 install_fubectl
 setup_neovim
+install_vscode_plugins
 
 echo
 echo "Done. Restart terminal to see the changes."
