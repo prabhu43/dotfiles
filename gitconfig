@@ -1,23 +1,28 @@
-# Intentionally not added email to get a warning message when making
-# the first commit so that I will get reminded of setting email in the
-# git repo locally (without affecting global git config). This prevents
-# committing with wrong email addresses to a certain extent.
-
 [user]
-  name = Prabhu Jayakumar
-
-# Set the git config email to client given email when the git repo is
-# inside ~/tw-projects/ directory
-
-[includeIf "gitdir:~/tw-projects/"]
-  path = .gitconfig-tw
-
-[core]
-  editor = nvim
-  whitespace = trailing-space,space-before-tab
-[color]
-	  ui = auto
-[apply]
-  whitespace = fix
+	name = Prabhu Jayakumar
+	email = j.prabhu91@gmail.com
+	signingkey = 1901435BB9AA9A6C
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = true
+[core]
+    whitespace = trailing-space,space-before-tab
+[apply]
+    whitespace = fix
+[push]
+	default = current
+	followTags = false
+[pull]
+  rebase = true
+  autoStash = true
+[rebase]
+  # autoSquash = true
+  autoStash = true
+[stash]
+  untracked = true
+[tag]
+  sort = version:refname
+[init]
+	templatedir = ~/.git-template
+	defaultBranch = main
